@@ -11,3 +11,7 @@
 Её нужно создать вручную. Сделать это нужно с помощью команды:
 ```sql
 create schema userRepository;
+```
+Города из таблицы:
+* MOSCOW
+* VOLGOGRAD
