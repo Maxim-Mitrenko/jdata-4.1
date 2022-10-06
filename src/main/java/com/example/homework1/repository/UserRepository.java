@@ -1,22 +1,18 @@
 package com.example.homework1.repository;
 
+import com.example.homework1.entity.Contact;
 import com.example.homework1.entity.User;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
 import java.util.List;
 
 @Repository
-public class UserRepository {
+public interface UserRepository extends JpaRepository<User, Contact> {
 
-    @PersistenceContext
-    private EntityManager entityManager;
+    List<User> findByCity(String city);
 
-    public List<User> getPersonsByCity(String city) {
-        Query query = entityManager.createQuery("SELECT u FROM User u WHERE u.city = :city");
-        query.setParameter("city", city);
-        return query.getResultList();
-    }
+    List<User> findByContactAge(int age);
+
+    List<User> findByContactNameAndContactSurname(String name, String surname);
 }
