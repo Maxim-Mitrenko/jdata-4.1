@@ -25,16 +25,16 @@ public class Controller {
     }
     @GetMapping("/by-city")
     public List<User> findByCity(@RequestParam String city) {
-        return repository.findByCity(city);
+        return repository.fromCity(city);
     }
 
     @GetMapping("/by-age")
     public List<User> findByAge(@RequestParam int age) {
-        return repository.findByContactAge(age);
+        return repository.thatAge(age);
     }
 
     @GetMapping("/by-nameAndSurname")
     public List<User> findByNameAndSurname(@RequestParam String name, @RequestParam String surname) {
-        return repository.findByContactNameAndContactSurname(name, surname);
+        return repository.nameAndSurname(name, surname);
     }
 }
