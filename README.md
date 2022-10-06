@@ -12,6 +12,3 @@
 ```sql
 create schema userRepository;
 ```
-Города из таблицы:
-* MOSCOW
-* VOLGOGRAD
